@@ -2,10 +2,6 @@
 /build/
 /build-*/
 
-# Meson overlay copied into the cmark-gfm submodule by `make init`
-/external/cmark-gfm/meson.build
-/external/cmark-gfm/build-support/
-
 # Local reference clones (not part of the app)
 /context/
 

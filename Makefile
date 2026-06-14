@@ -5,7 +5,6 @@ BINARY := $(BUILD_DIR)/dastan
 DUMP_TREE := $(BUILD_DIR)/dump-tree
 FONTS_CONF := $(abspath $(BUILD_DIR)/dastan-fonts.conf)
 CMARK_GFM_DIR := external/cmark-gfm
-CMARK_GFM_OVERLAY := external/cmark-gfm-meson
 
 MESON ?= meson
 
@@ -21,11 +20,9 @@ help: ## Show available targets
 
 all: build ## Build MarkViewer
 
-init: ## Initialize submodules, cmark-gfm overlay, and context reference clones
+init: ## Initialize submodules and context reference clones
 	git submodule update --init --recursive
-	@test -d $(CMARK_GFM_DIR) || (echo "dastan: $(CMARK_GFM_DIR) missing; clone with submodules enabled" >&2; exit 1)
-	cp $(CMARK_GFM_OVERLAY)/meson.build $(CMARK_GFM_DIR)/
-	cp -r $(CMARK_GFM_OVERLAY)/build-support $(CMARK_GFM_DIR)/
+	@test -f $(CMARK_GFM_DIR)/src/cmark.c || (echo "dastan: $(CMARK_GFM_DIR) submodule empty — use: git clone --recurse-submodules …" >&2; exit 1)
 	./scripts/fetch-context.sh
 
 setup: init ## Configure the Meson build directory

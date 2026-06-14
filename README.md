@@ -51,9 +51,9 @@ make run FILE=notes.md
 # optional: sudo make install
 ```
 
-`make build` automatically initializes the vendored parser, applies the
-`cmark-gfm` Meson overlay, prepares reference context repositories, configures
-the build directory when needed, and compiles the application.
+`make build` automatically initializes the `cmark-gfm` submodule, prepares
+reference context repositories, configures the build directory when needed,
+and compiles the application.
 
 ```bash
 dastan path/to/document.md
@@ -119,7 +119,7 @@ Common targets:
 | Target | Description |
 |--------|-------------|
 | `make help` | Show available commands |
-| `make init` | Initialize submodules, parser overlay, and reference context |
+| `make init` | Initialize submodules and reference context |
 | `make build` | Configure if needed and compile |
 | `make run FILE=doc.md` | Build and open a Markdown file |
 | `make debug FILE=doc.md` | Run with GTK Inspector enabled |

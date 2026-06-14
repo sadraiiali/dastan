@@ -10,7 +10,7 @@ project(
 gtk_dep = dependency('gtk4', version: '>= 4.12')
 adw_dep = dependency('libadwaita-1', version: '>= 1.5')
 
-subdir('external/cmark-gfm')
+subdir('external/cmark-gfm-meson')
 
 dev_data_dir = join_paths(meson.current_source_dir(), 'assets')
 install_data_dir = join_paths(get_option('prefix'), get_option('datadir'), 'dastan')
