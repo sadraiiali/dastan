@@ -1,0 +1,31 @@
+# Meson / Ninja build outputs
+/build/
+/build-*/
+
+# Meson overlay copied into the cmark-gfm submodule by `make init`
+/external/cmark-gfm/meson.build
+/external/cmark-gfm/build-support/
+
+# Local reference clones (not part of the app)
+/context/
+
+# AST dumps from `make tree` / `dump-tree`
+*-tree.yml
+*-tree.yaml
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.#*
+
+.cache
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Symlinked compile database for clangd / LSP (source of truth is build/)
+/compile_commands.json

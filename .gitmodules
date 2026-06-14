@@ -1,0 +1,3 @@
+[submodule "external/cmark-gfm"]
+	path = external/cmark-gfm
+	url = https://github.com/github/cmark-gfm.git

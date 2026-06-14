@@ -1,0 +1,22 @@
+namespace MarkViewer.Config {
+    private const string DEV_DATA_DIR = "@DEV_DATA_DIR@";
+    private const string INSTALLED_DATA_DIR = "@INSTALLED_DATA_DIR@";
+    private const string DEV_FONTS_CONF = "@DEV_FONTS_CONF@";
+    private const string INSTALLED_FONTS_CONF = "@INSTALLED_FONTS_CONF@";
+
+    public string data_dir () {
+        if (FileUtils.test (INSTALLED_DATA_DIR, FileTest.IS_DIR)) {
+            return INSTALLED_DATA_DIR;
+        }
+
+        return DEV_DATA_DIR;
+    }
+
+    public string fonts_conf () {
+        if (FileUtils.test (INSTALLED_FONTS_CONF, FileTest.EXISTS)) {
+            return INSTALLED_FONTS_CONF;
+        }
+
+        return DEV_FONTS_CONF;
+    }
+}
