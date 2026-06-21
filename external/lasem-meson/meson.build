@@ -18,4 +18,7 @@ lasem_sub = subproject(
   ],
 )
 
-lasem_dep = lasem_sub.get_variable('lasem_library_dependencies')
+lasem_dep = declare_dependency(
+  dependencies: lasem_sub.get_variable('lasem_library_dependencies'),
+  include_directories: include_directories('../lasem/src'),
+)
