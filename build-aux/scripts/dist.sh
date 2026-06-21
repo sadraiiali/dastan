@@ -119,7 +119,7 @@ stage_install_tree() {
   rm -rf "$STAGING" "$PKG_BUILD" "$APPDIR"
   mkdir -p "$STAGING"
 
-  git submodule update --init --recursive external/cmark-gfm
+  make init-build
 
   meson setup "$PKG_BUILD" . \
     --prefix=/usr \
@@ -186,7 +186,6 @@ build_appimage() {
 
 create_source_tarball() {
   local tarball="$DIST/dastan-${VERSION}.tar.gz"
-  git submodule update --init --recursive external/cmark-gfm
 
   tar -czf "$tarball" \
     --exclude=build \

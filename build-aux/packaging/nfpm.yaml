@@ -41,5 +41,5 @@ contents:
     type: tree
 
 scripts:
-  postinstall: scripts/postinstall.sh
-  postremove: scripts/postremove.sh
+  postinstall: build-aux/packaging/scripts/postinstall.sh
+  postremove: build-aux/packaging/scripts/postremove.sh
