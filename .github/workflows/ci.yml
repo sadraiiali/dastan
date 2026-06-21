@@ -36,7 +36,12 @@ jobs:
           meson compile -C build
 
       - name: Test
-        run: xvfb-run -a meson test -C build --print-errorlogs
+        run: xvfb-run -a -s '-screen 0 1280x1024x24' meson test -C build --print-errorlogs
+        env:
+          GDK_BACKEND: x11
+          GSK_RENDERER: cairo
+          GTK_A11Y: none
+          LIBGL_ALWAYS_SOFTWARE: 1
 
   package:
     name: Package

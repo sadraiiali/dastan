@@ -1,6 +1,9 @@
 fonts_conf = join_paths(meson.project_build_root(), 'data', 'dastan-fonts.conf')
 math_test_env = [
   'GDK_BACKEND=x11',
+  'GSK_RENDERER=cairo',
+  'GTK_A11Y=none',
+  'LIBGL_ALWAYS_SOFTWARE=1',
   'FONTCONFIG_FILE=' + fonts_conf,
 ]
 

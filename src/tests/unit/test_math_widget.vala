@@ -1,4 +1,7 @@
 void main (string[] args) {
+    Environment.set_variable ("GSK_RENDERER", "cairo", true);
+    Environment.set_variable ("GTK_A11Y", "none", true);
+
     Gtk.init ();
 
     Test.init (ref args);
