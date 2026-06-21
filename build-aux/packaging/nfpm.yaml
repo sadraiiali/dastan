@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=https://nfpm.goreleaser.com/schema.json
+name: dastan
+arch: "${ARCH}"
+platform: linux
+version: "${VERSION}"
+release: "1"
+section: utils
+priority: optional
+maintainer: "Sadrai Ali <https://github.com/sadraiiali/dastan>"
+description: |
+  Dastan is a native GTK 4 Markdown viewer for Linux.
+  It renders GitHub Flavored Markdown using cmark-gfm and GTK widgets.
+vendor: Dastan
+homepage: https://github.com/sadraiiali/dastan
+license: AGPL-3.0-or-later
+
+depends:
+  - gtk4
+  - libadwaita
+
+overrides:
+  deb:
+    depends:
+      - libgtk-4-1 (>= 4.12)
+      - libadwaita-1-0 (>= 1.5)
+      - libglib2.0-0
+  rpm:
+    depends:
+      - gtk4 >= 4.12
+      - libadwaita >= 1.5
+      - glib2 >= 2.74
+  archlinux:
+    depends:
+      - gtk4
+      - libadwaita
+      - glib2
+
+contents:
+  - src: dist/staging/usr/
+    dst: /usr
+    type: tree
+
+scripts:
+  postinstall: scripts/postinstall.sh
+  postremove: scripts/postremove.sh

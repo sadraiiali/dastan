@@ -1,0 +1,43 @@
+# Maintainer: Sadrai Ali <https://github.com/sadraiiali/dastan>
+pkgname=dastan
+pkgver=0.2.0
+pkgrel=1
+pkgdesc="Native GTK 4 Markdown viewer"
+arch=('x86_64' 'aarch64')
+url="https://github.com/sadraiiali/dastan"
+license=('AGPL-3.0-or-later')
+depends=('gtk4' 'libadwaita' 'glib2' 'pangocairo' 'libxml2')
+makedepends=('meson' 'ninja' 'vala' 'gcc' 'git' 'glib2-devel' 'flex' 'bison')
+source=()
+sha256sums=()
+
+pkgver() {
+  cd "$startdir/../.."
+  grep -m1 "version:" meson.build | sed -E "s/.*'([^']+)'.*/\1/"
+}
+
+prepare() {
+  cd "$startdir/../.."
+  rm -rf "$srcdir/$pkgname"
+  mkdir -p "$srcdir/$pkgname"
+  tar -cf - \
+    --exclude=./build \
+    --exclude=./dist \
+    --exclude=./context \
+    --exclude=./.git \
+    . | tar -xf - -C "$srcdir/$pkgname"
+  cd "$srcdir/$pkgname"
+  git submodule update --init --recursive external/cmark-gfm external/lasem
+}
+
+build() {
+  cd "$srcdir/$pkgname"
+  arch-meson build --prefix=/usr
+  meson compile -C build
+}
+
+package() {
+  cd "$srcdir/$pkgname"
+  DESTDIR="$pkgdir" meson install -C build
+  glib-compile-schemas "$pkgdir/usr/share/glib-2.0/schemas"
+}

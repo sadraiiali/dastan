@@ -1,6 +1,7 @@
 # Meson / Ninja build outputs
 /build/
 /build-*/
+!/build-aux/
 .flatpak-builder
 
 # Distribution packages
