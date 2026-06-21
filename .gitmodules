@@ -1,3 +1,6 @@
 [submodule "external/cmark-gfm"]
 	path = external/cmark-gfm
 	url = https://github.com/github/cmark-gfm.git
+[submodule "external/lasem"]
+	path = external/lasem
+	url = https://github.com/LasemProject/lasem.git
