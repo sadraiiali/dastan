@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>@app_id@</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+  <name>Dastan</name>
+  <summary>Native GTK 4 Markdown viewer</summary>
+  <developer id="io.github.sadraiiali">
+    <name>Sadrai Ali</name>
+  </developer>
+
+  <description>
+    <p>
+      Dastan renders Markdown as native GTK widgets. It parses GitHub Flavored
+      Markdown and displays the result without a WebView, browser engine, or
+      embedded JavaScript runtime.
+    </p>
+    <p>
+      The viewer is especially attentive to mixed-direction documents, Persian
+      and Arabic typography, and clean Markdown presentation.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Native GTK 4 and Libadwaita interface</li>
+      <li>GitHub Flavored Markdown parsing</li>
+      <li>Headings, lists, tables, task lists, code blocks, and blockquotes</li>
+      <li>Right-to-left and mixed-direction text support</li>
+      <li>Native LaTeX math typesetting</li>
+      <li>Bundled fonts for Persian typography and math rendering</li>
+    </ul>
+  </description>
+
+  <keywords>
+    <keyword>Markdown</keyword>
+    <keyword>viewer</keyword>
+    <keyword>GFM</keyword>
+    <keyword>reader</keyword>
+    <keyword>GTK</keyword>
+    <keyword>Libadwaita</keyword>
+  </keywords>
+
+  <launchable type="desktop-id">@app_id@.desktop</launchable>
+  <provides>
+    <binary>dastan</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/sadraiiali/dastan</url>
+  <url type="bugtracker">https://github.com/sadraiiali/dastan/issues</url>
+  <url type="vcs-browser">https://github.com/sadraiiali/dastan</url>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="0.2.0" date="2026-06-21">
+      <description>
+        <p>Native GTK 4 Markdown viewer with GFM support, RTL typography, and LaTeX math rendering.</p>
+      </description>
+    </release>
+  </releases>
+</component>

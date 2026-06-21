@@ -1,0 +1,21 @@
+/* Base sizing tokens — colors are applied via dynamic theme provider */
+
+window.md-theme-auto,
+window.md-theme-light,
+window.md-theme-dark,
+window.md-theme-dark-dimmed,
+window.md-theme-dark-high-contrast,
+window.md-theme-dark-colorblind,
+window.md-theme-light-colorblind,
+dialog.md-theme-auto,
+dialog.md-theme-light,
+dialog.md-theme-dark,
+dialog.md-theme-dark-dimmed,
+dialog.md-theme-dark-high-contrast,
+dialog.md-theme-dark-colorblind,
+dialog.md-theme-light-colorblind {
+  --base-size-4: 0.25rem;
+  --base-size-8: 0.5rem;
+  --base-size-16: 1rem;
+  --base-size-24: 1.5rem;
+}

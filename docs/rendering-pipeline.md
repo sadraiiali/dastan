@@ -13,7 +13,7 @@ This document explains how MarkViewer turns a Markdown file into something you s
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │ 1. CLI                                                          │
-│    markviewer test/test-showcase.md                             │
+│    markviewer src/tests/test-showcase.md                             │
 │    src/application.vala → opens MarkViewer.Window               │
 └────────────────────────────┬────────────────────────────────────┘
                              ▼
@@ -59,7 +59,7 @@ This document explains how MarkViewer turns a Markdown file into something you s
 
 ## Step 0: Font setup
 
-Before GTK initializes, `main.vala` calls `FontConfig.setup_bundled_fonts()`. If `FONTCONFIG_FILE` is not already set in the environment, it points fontconfig at the generated `build/markviewer-fonts.conf`, which adds `assets/fonts/` (bundled Shabnam) to the font search path.
+Before GTK initializes, `main.vala` calls `FontConfig.setup_bundled_fonts()`. If `FONTCONFIG_FILE` is not already set in the environment, it points fontconfig at the generated `build/data/dastan-fonts.conf`, which adds `data/fonts/` (bundled Shabnam) to the font search path.
 
 `make run` and `make debug` set `FONTCONFIG_FILE` explicitly so fonts work even if startup order differs.
 
@@ -137,7 +137,7 @@ Zoom changes re-render the document with an updated `--md-scale` CSS variable.
 
 ## Step 7: Painting
 
-GTK calculates sizes, wraps text in labels, and draws widgets. Libadwaita applies your system light/dark theme. `assets/markviewer.css` adds typography and spacing via GTK’s CSS engine (not browser CSS).
+GTK calculates sizes, wraps text in labels, and draws widgets. Libadwaita applies your system light/dark theme. `data/markviewer.css` adds typography and spacing via GTK’s CSS engine (not browser CSS).
 
 ## Why not HTML?
 

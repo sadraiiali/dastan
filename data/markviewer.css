@@ -1,0 +1,391 @@
+.markdown-body,
+.md-content-column {
+  --md-scale: 1;
+}
+
+.markdown-body {
+  --md-root-size: 1rem;
+  font-size: calc(var(--md-root-size) * var(--md-scale));
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  color: var(--fgColor-default);
+  background-color: var(--bgColor-default);
+}
+
+.markdown-body label,
+.md-h1,
+.md-h2,
+.md-h3,
+.md-h4,
+.md-h5,
+.md-h6,
+.md-paragraph,
+.md-list-paragraph,
+.md-code-block,
+.md-math-source,
+.md-table-cell,
+.md-table-cell label,
+.md-table-header,
+.md-table-header label,
+.md-parse-error {
+  color: var(--fgColor-default);
+}
+
+.md-blockquote label,
+.md-blockquote .md-paragraph,
+.md-blockquote .md-list-paragraph {
+  color: var(--fgColor-muted);
+}
+
+.markdown-body :dir(rtl),
+.md-settings-font-preview {
+  font-family: Shabnam, "Shabnam FD", sans-serif;
+}
+
+.md-content-column {
+  padding: calc(1.25rem * var(--md-scale));
+}
+
+window.md-container-off .markdown-body {
+  background-color: transparent;
+}
+
+window.md-container-off .md-full-width {
+  padding: calc(1.25rem * var(--md-scale));
+}
+
+window.md-container-on .md-in-container.markdown-body {
+  background-color: var(--bgColor-default);
+  border-radius: calc(0.375rem * var(--md-scale));
+}
+
+.md-block {
+  margin-top: 0;
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+}
+
+.md-block:first-child {
+  margin-top: 0;
+}
+
+.md-block:first-child.md-h1,
+.md-block:first-child.md-h2,
+.md-block:first-child.md-h3,
+.md-block:first-child.md-h4,
+.md-block:first-child.md-h5,
+.md-block:first-child.md-h6 {
+  margin-top: 0;
+}
+
+.md-empty {
+  color: var(--fgColor-muted);
+}
+
+.md-empty-state {
+  min-height: calc(18rem * var(--md-scale));
+}
+
+.md-drop-zone {
+  padding: calc(2.5rem * var(--md-scale));
+  border-width: calc(0.125rem * var(--md-scale));
+  border-style: dashed;
+  border-color: var(--borderColor-muted);
+  border-radius: calc(0.75rem * var(--md-scale));
+  min-width: calc(18rem * var(--md-scale));
+}
+
+.md-drop-zone-active {
+  border-color: var(--fgColor-accent);
+  background-color: var(--bgColor-muted);
+}
+
+.md-drop-zone-title {
+  font-size: calc(1.125rem * var(--md-scale));
+  font-weight: 600;
+  color: var(--fgColor-default);
+}
+
+.md-drop-zone-icon {
+  opacity: 0.72;
+}
+
+.md-h1 {
+  font-size: calc(2em * var(--md-scale));
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: calc(var(--base-size-24, 1.5rem) * var(--md-scale));
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+  padding-bottom: calc(0.3em * var(--md-scale));
+  border-bottom-width: calc(0.0625rem * var(--md-scale));
+  border-bottom-color: var(--borderColor-muted);
+  border-style: solid;
+}
+
+.md-h2 {
+  font-size: calc(1.5em * var(--md-scale));
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: calc(var(--base-size-24, 1.5rem) * var(--md-scale));
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+  padding-bottom: calc(0.3em * var(--md-scale));
+  border-bottom-width: calc(0.0625rem * var(--md-scale));
+  border-bottom-color: var(--borderColor-muted);
+  border-style: solid;
+}
+
+.md-h3 {
+  font-size: calc(1.25em * var(--md-scale));
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: calc(var(--base-size-24, 1.5rem) * var(--md-scale));
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+}
+
+.md-h4 {
+  font-size: calc(1em * var(--md-scale));
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: calc(var(--base-size-24, 1.5rem) * var(--md-scale));
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+}
+
+.md-h5 {
+  font-size: calc(0.875em * var(--md-scale));
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: calc(var(--base-size-24, 1.5rem) * var(--md-scale));
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+}
+
+.md-h6 {
+  font-size: calc(0.85em * var(--md-scale));
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--fgColor-muted);
+  margin-top: calc(var(--base-size-24, 1.5rem) * var(--md-scale));
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+}
+
+.md-paragraph {
+  font-size: calc(1rem * var(--md-scale));
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+}
+
+.markdown-body label link {
+  color: var(--fgColor-accent);
+}
+
+.markdown-body tt {
+  color: var(--fgColor-default);
+  font-family:
+    ui-monospace,
+    "Noto Sans Mono",
+    "DejaVu Sans Mono",
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+  font-size: calc(0.85em * var(--md-scale));
+  line-height: calc(1.25rem * var(--md-scale));
+  background-color: var(--bgColor-neutral-muted);
+  border-radius: calc(0.375rem * var(--md-scale));
+}
+
+.md-blockquote {
+  padding: 0 calc(1em * var(--md-scale));
+  margin-top: 0;
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+  border-left-width: calc(0.25em * var(--md-scale));
+  border-left-color: var(--borderColor-default);
+  border-style: solid;
+  color: var(--fgColor-muted);
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.md-blockquote:dir(rtl) {
+  border-left-width: 0;
+  border-right-width: calc(0.25em * var(--md-scale));
+  border-right-color: var(--borderColor-default);
+}
+
+.md-blockquote .md-block {
+  margin-bottom: calc(0.125rem * var(--md-scale));
+}
+
+.md-blockquote .md-block:last-child {
+  margin-bottom: 0;
+}
+
+.md-list {
+  margin-top: 0;
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+}
+
+.md-list-item {
+  margin-bottom: calc(0.125rem * var(--md-scale));
+}
+
+.md-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.md-list-marker {
+  color: var(--fgColor-muted);
+  font-weight: normal;
+  font-size: calc(1rem * var(--md-scale));
+  line-height: calc(1.5rem * var(--md-scale));
+  margin: 0;
+  margin-right: calc(0.25rem * var(--md-scale));
+  padding: 0;
+  min-height: 0;
+}
+
+.md-list-marker:dir(rtl) {
+  margin-right: 0;
+  margin-left: calc(0.25rem * var(--md-scale));
+}
+
+.md-list-marker-bullet {
+  min-width: calc(0.75rem * var(--md-scale));
+}
+
+.md-list-marker-ordered {
+  font-weight: 600;
+  line-height: calc(1.5rem * var(--md-scale));
+  min-width: calc(1.5rem * var(--md-scale));
+}
+
+.md-list-item .md-list-paragraph {
+  font-size: calc(1rem * var(--md-scale));
+  line-height: calc(1.5rem * var(--md-scale));
+  margin: 0;
+  padding: 0;
+}
+
+.md-hr {
+  margin-top: calc(var(--base-size-16, 1rem) * var(--md-scale));
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+}
+
+.markdown-body .md-code-wrap {
+  background-color: var(--bgColor-muted);
+  border-radius: calc(0.375rem * var(--md-scale));
+  margin-top: 0;
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+  padding-top: 0;
+  font-family:
+    ui-monospace,
+    "Noto Sans Mono",
+    "DejaVu Sans Mono",
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+}
+
+.md-code-scroll {
+  min-width: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.markdown-body .md-code-block,
+.markdown-body .md-code-block textview {
+  font-size: calc(0.85em * var(--md-scale));
+  line-height: 1.45;
+  margin-top: 0;
+  padding: calc(var(--base-size-16, 1rem) * var(--md-scale));
+  font-family:
+    ui-monospace,
+    "Noto Sans Mono",
+    "DejaVu Sans Mono",
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+  color: var(--fgColor-default);
+  background-color: transparent;
+}
+
+.md-table-scroll {
+  margin-top: 0;
+  margin-bottom: calc(var(--base-size-16, 1rem) * var(--md-scale));
+}
+
+.md-table {
+  border-width: calc(0.0625rem * var(--md-scale));
+  border-color: var(--borderColor-default);
+  border-style: solid;
+  border-radius: calc(0.375rem * var(--md-scale));
+}
+
+.md-table-cell {
+  font-size: calc(1rem * var(--md-scale));
+  line-height: 1.35;
+  padding: calc(0.375rem * var(--md-scale)) calc(0.8125rem * var(--md-scale));
+  border-bottom-width: calc(0.0625rem * var(--md-scale));
+  border-bottom-color: var(--borderColor-default);
+  border-right-width: calc(0.0625rem * var(--md-scale));
+  border-right-color: var(--borderColor-default);
+  border-style: solid;
+  min-width: 0;
+  background-color: var(--bgColor-default);
+}
+
+.md-table-row-alt .md-table-cell {
+  background-color: var(--bgColor-muted);
+}
+
+.md-table-row-last {
+  border-bottom-width: 0;
+}
+
+.md-table-col-last {
+  border-right-width: 0;
+}
+
+.md-table-header {
+  font-weight: 600;
+  background-color: var(--bgColor-muted);
+}
+
+.md-image-alt {
+  color: var(--fgColor-muted);
+  font-style: italic;
+}
+
+.md-parse-error {
+  margin: calc(1.5rem * var(--md-scale));
+  font-size: calc(1rem * var(--md-scale));
+  line-height: calc(1.5rem * var(--md-scale));
+}
+
+.md-math {
+  min-width: 0;
+}
+
+.md-math-source {
+  font-family: "Noto Sans Mono", monospace;
+  font-size: calc(0.9375rem * var(--md-scale));
+  line-height: calc(1.5rem * var(--md-scale));
+}
+
+.md-math-rendered {
+  min-width: 0;
+}
+
+.md-math-block {
+  margin-top: calc(0.5rem * var(--md-scale));
+  margin-bottom: calc(0.5rem * var(--md-scale));
+  padding: calc(0.5rem * var(--md-scale)) calc(0.75rem * var(--md-scale));
+  background-color: var(--bgColor-muted);
+  border-radius: 6px;
+}
+
+.md-math-paragraph {
+  margin: 0;
+}
+
+.md-list-paragraph.md-math-paragraph {
+  min-width: 0;
+}

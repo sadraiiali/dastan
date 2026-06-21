@@ -1,0 +1,4 @@
+# List of source files containing translatable strings.
+data/appdata/io.github.markviewer.metainfo.xml.in.in
+data/io.github.markviewer.desktop.in.in
+data/gsettings/io.github.markviewer.gschema.xml

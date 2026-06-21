@@ -71,19 +71,19 @@ Persian and Eastern Arabic digits in list markers (`۱.`, `۲.`) are normalized 
 
 ### Bundled Shabnam
 
-MarkViewer ships Shabnam in `assets/fonts/` (woff2 and ttf). At build time, Meson generates `build/markviewer-fonts.conf` from `assets/markviewer-fonts.conf.in`, which tells fontconfig to search that directory.
+MarkViewer ships Shabnam in `data/fonts/` (woff2 and ttf). At build time, Meson generates `build/data/dastan-fonts.conf` from `data/fonts/dastan-fonts.conf.in`, which tells fontconfig to search that directory.
 
 Use `make run` or set `FONTCONFIG_FILE` when invoking the binary directly:
 
 ```bash
-FONTCONFIG_FILE=build/markviewer-fonts.conf ./build/markviewer notes.md
+FONTCONFIG_FILE=build/data/dastan-fonts.conf ./build/markviewer notes.md
 ```
 
 `src/font_config.vala` sets `FONTCONFIG_FILE` at startup when the variable is not already defined.
 
 ### CSS font stack
 
-`assets/markviewer.css` sets a mixed-script stack on `.markdown-body`:
+`data/markviewer.css` sets a mixed-script stack on `.markdown-body`:
 
 - Shabnam (bundled), Vazirmatn, IRANSansWeb, IBM Plex Sans Arabic, Noto Naskh Arabic, …
 

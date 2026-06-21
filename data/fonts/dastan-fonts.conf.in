@@ -3,4 +3,5 @@
 <fontconfig>
   <include ignore_missing="yes">/etc/fonts/fonts.conf</include>
   <dir>@FONTS_DIR@</dir>
+  <dir>@FONTS_DIR@/math</dir>
 </fontconfig>

@@ -38,10 +38,10 @@ Widgets are stacked in a vertical `Gtk.Box`, placed inside `Adw.Clamp` (max widt
 - `src/markdown_preprocessor.vala` — math protection and pre-parse normalization
 - `src/math_widget.vala` — native LaTeX source labels
 - `src/font_config.vala` — bundled Shabnam via fontconfig
-- `assets/markviewer.css` — application stylesheet
+- `data/markviewer.css` — application stylesheet
 
 ## See also
 
 - [README.md](../README.md) — install, usage, and quick start
-- [test/test-showcase.md](../test/test-showcase.md) — large mixed English/Farsi sample document
+- [src/tests/test-showcase.md](../src/tests/test-showcase.md) — large mixed English/Farsi sample document
 - [cmark-gfm specification](https://github.github.com/gfm/)

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: AGPL-3.0-or-later
+set -euo pipefail
+
+HERE="$(dirname "$(readlink -f "${0}")")"
+export APPDIR="${APPDIR:-$HERE}"
+
+if [ -z "${GSETTINGS_SCHEMA_DIR:-}" ]; then
+  export GSETTINGS_SCHEMA_DIR="$APPDIR/usr/share/glib-2.0/schemas"
+fi
+
+export XDG_DATA_DIRS="$APPDIR/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
+
+exec "$APPDIR/usr/bin/dastan" "$@"

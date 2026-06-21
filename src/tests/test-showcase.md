@@ -372,9 +372,10 @@ nested code line 2
 
 ---
 
-## Mathematics (LaTeX source)
+## Mathematics (native typesetting)
 
-MarkViewer recognizes **GitHub-style math delimiters** and shows the LaTeX source in monospace. Formulas are not typeset.
+MarkViewer recognizes **GitHub-style math delimiters** and typesets formulas with Lasem
+(Cairo/Pango). Unsupported LaTeX falls back to monospace source labels.
 
 ### Inline math
 

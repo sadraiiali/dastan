@@ -33,15 +33,9 @@ public class MarkViewer.Application : Adw.Application {
             break;
         }
 
-        if (file_path == null) {
-            print_error ("Missing markdown file path.\n");
-            print_usage (args[0]);
-            release ();
-            return 1;
-        }
-
         var window = new MarkViewer.Window (this);
-        if (!window.open_file (file_path)) {
+
+        if (file_path != null && !window.open_file (file_path)) {
             release ();
             return 1;
         }
@@ -52,10 +46,6 @@ public class MarkViewer.Application : Adw.Application {
     }
 
     private void print_usage (string command) {
-        stderr.printf ("Usage: %s <path-to-markdown.md>\n", command);
-    }
-
-    private void print_error (string message) {
-        stderr.printf ("dastan: %s", message);
+        stderr.printf ("Usage: %s [path-to-markdown.md]\n", command);
     }
 }

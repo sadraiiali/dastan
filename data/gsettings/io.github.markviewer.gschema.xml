@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="io.github.markviewer" path="/io/github/markviewer/">
+    <key name="markdown-theme" type="s">
+      <default>'auto'</default>
+      <summary>Markdown rendering theme</summary>
+      <description>GitHub Markdown CSS theme applied to the viewer window.</description>
+    </key>
+    <key name="show-content-container" type="b">
+      <default>true</default>
+      <summary>Show content container</summary>
+      <description>Center markdown in a max-width reading column with padding.</description>
+    </key>
+  </schema>
+</schemalist>

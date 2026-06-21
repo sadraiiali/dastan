@@ -1,0 +1,1 @@
+Inline energy: $E = mc^2$

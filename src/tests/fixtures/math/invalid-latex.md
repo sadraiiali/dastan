@@ -1,0 +1,3 @@
+$$
+\notarealcommand{broken}
+$$

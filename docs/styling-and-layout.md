@@ -1,6 +1,6 @@
 # Styling and layout
 
-MarkViewer styles content with **GTK CSS** (`assets/markviewer.css`) and **widget properties** in Vala. This is not browser CSS.
+MarkViewer styles content with **GTK CSS** (`data/markviewer.css`) and **widget properties** in Vala. This is not browser CSS.
 
 ## Reading column layout
 
@@ -24,7 +24,7 @@ return new Adw.Clamp () {
 
 ## Stylesheet loading
 
-On window construction, `load_styles()` reads `assets/markviewer.css` and registers it application-wide:
+On window construction, `load_styles()` reads `data/markviewer.css` and registers it application-wide:
 
 ```vala
 var provider = new Gtk.CssProvider ();
@@ -32,7 +32,7 @@ provider.load_from_path (css_path);
 Gtk.StyleContext.add_provider_for_display (display, provider, APPLICATION);
 ```
 
-The path comes from `Config.DATA_DIR`, set at build time in `meson.build` (points at the `assets/` directory).
+The path comes from `Config.DATA_DIR`, set at build time in `meson.build` (points at the `data/` directory).
 
 ## Zoom / font scale
 
@@ -106,7 +106,7 @@ Blockquotes use physical borders with an RTL override:
 
 ### Fontconfig
 
-Meson generates `build/markviewer-fonts.conf` from `assets/markviewer-fonts.conf.in`. It includes the system fontconfig and adds `assets/fonts/` so bundled **Shabnam** (woff2 and ttf) is available without a package install.
+Meson generates `build/data/dastan-fonts.conf` from `data/fonts/dastan-fonts.conf.in`. It includes the system fontconfig and adds `data/fonts/` so bundled **Shabnam** (woff2 and ttf) is available without a package install.
 
 `make run` sets `FONTCONFIG_FILE` to that generated file. `src/font_config.vala` sets the same variable at startup when it is unset.
 

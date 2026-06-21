@@ -1,6 +1,10 @@
 # Meson / Ninja build outputs
 /build/
 /build-*/
+.flatpak-builder
+
+# Distribution packages
+/dist/
 
 # Local reference clones (not part of the app)
 /context/

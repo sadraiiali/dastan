@@ -1,0 +1,1 @@
+Source artwork for application icons. Installed icons live under `hicolor/`.

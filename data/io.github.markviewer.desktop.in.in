@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Dastan
+GenericName=Markdown Viewer
+Comment=Native GTK 4 Markdown viewer
+Exec=dastan %f
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon=@app_id@
+Categories=Utility;Viewer;
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=Markdown;Viewer;GFM;Read;
+MimeType=text/markdown;text/x-markdown;
+StartupNotify=true
+Terminal=false

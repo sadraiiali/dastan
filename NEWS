@@ -1,0 +1,8 @@
+# Dastan 0.2.0
+
+ * Native GTK 4 and Libadwaita Markdown viewer
+ * GitHub Flavored Markdown rendering via vendored cmark-gfm
+ * Native LaTeX math typesetting via vendored Lasem
+ * Right-to-left and mixed-direction text support
+ * Bundled Shabnam and Latin Modern fonts
+ * Flatpak, AppImage, and distribution packaging support

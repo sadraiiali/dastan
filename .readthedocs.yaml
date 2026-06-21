@@ -1,0 +1,12 @@
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+version: 2
+
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.11"
+
+# Project documentation lives in docs/ as Markdown files.
+# Add a Sphinx or MkDocs configuration here when publishing on Read the Docs.

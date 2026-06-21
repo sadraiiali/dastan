@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/logo.jpg" alt="Dastan" width="80">
+<img src="data/logo.jpg" alt="Dastan" width="80">
 
 # Dastan
 
@@ -36,7 +36,9 @@ rendering.
   tables, task lists, and thematic breaks
 - Right-to-left and mixed-direction text support
 - Bundled Shabnam fonts through fontconfig for consistent Persian typography
-- Native display of LaTeX math delimiters as readable monospace source
+- Bundled GUST Latin Modern fonts for math rendering (no LyX or TeX Live fonts required)
+- Native LaTeX math typesetting via vendored [Lasem](https://github.com/LasemProject/lasem)
+  (Cairo/Pango, no WebView), with monospace source fallback for unsupported input
 - AST inspection tool for debugging rendering and direction metadata
 - No WebView, Chromium, WebKitGTK, KaTeX, MathJax, or browser runtime
 
@@ -103,13 +105,13 @@ During development, prefer the Makefile wrapper so the bundled fontconfig file
 is set automatically:
 
 ```bash
-make run FILE=test/test-showcase.md
+make run FILE=src/tests/test-showcase.md
 ```
 
 To inspect the parsed Markdown tree and direction metadata:
 
 ```bash
-make tree FILE=test/test-showcase.md OUT=test-showcase-tree.yml
+make tree FILE=src/tests/test-showcase.md OUT=test-showcase-tree.yml
 ```
 
 ## Development
@@ -155,12 +157,12 @@ The core implementation lives in:
 | Path | Purpose |
 |------|---------|
 | `src/application.vala` | Application startup and command-line handling |
-| `src/window.vala` | Main window, scrolling layout, zoom, and styling |
-| `src/markdown_renderer.vala` | AST traversal and GTK widget mapping |
-| `src/markdown_preprocessor.vala` | Pre-parse Markdown normalization |
-| `src/math_widget.vala` | Native rendering for math source blocks |
+| `src/ui/window.vala` | Main window, scrolling layout, zoom, and styling |
+| `src/markdown/renderer.vala` | AST traversal and GTK widget mapping |
+| `src/markdown/preprocessor.vala` | Pre-parse Markdown normalization |
+| `src/markdown/math/` | Lasem-backed math rendering (DrawingArea + fallback labels) |
 | `src/font_config.vala` | Bundled font configuration |
-| `src/tree_dumper.vala` | AST and direction metadata export |
+| `src/tools/tree_dumper.vala` | AST and direction metadata export |
 
 For deeper implementation notes, see the
 [project documentation](docs/README.md).
@@ -174,7 +176,7 @@ APIs may continue to change.
 Dastan is a viewer, not an editor: files are opened from the command line and
 are never modified by the application.
 
-Images, raw HTML, footnotes, and typeset math are not rendered as rich UI yet.
+Images, raw HTML, and footnotes are not rendered as rich UI yet.
 See the documentation for the current rendering model and known limitations.
 
 ## License

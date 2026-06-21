@@ -3,8 +3,24 @@ namespace MarkViewer.Config {
     private const string INSTALLED_DATA_DIR = "@INSTALLED_DATA_DIR@";
     private const string DEV_FONTS_CONF = "@DEV_FONTS_CONF@";
     private const string INSTALLED_FONTS_CONF = "@INSTALLED_FONTS_CONF@";
+    private const string DEV_SCHEMAS_DIR = "@DEV_SCHEMAS_DIR@";
+    private const string INSTALLED_SCHEMAS_DIR = "@INSTALLED_SCHEMAS_DIR@";
+
+    private string? appdir_usr () {
+        unowned string? appdir = Environment.get_variable ("APPDIR");
+        if (appdir == null || appdir == "") {
+            return null;
+        }
+
+        return Path.build_filename (appdir, "usr");
+    }
 
     public string data_dir () {
+        var usr = appdir_usr ();
+        if (usr != null) {
+            return Path.build_filename (usr, "share", "dastan");
+        }
+
         if (FileUtils.test (INSTALLED_DATA_DIR, FileTest.IS_DIR)) {
             return INSTALLED_DATA_DIR;
         }
@@ -18,5 +34,18 @@ namespace MarkViewer.Config {
         }
 
         return DEV_FONTS_CONF;
+    }
+
+    public string schemas_dir () {
+        var usr = appdir_usr ();
+        if (usr != null) {
+            return Path.build_filename (usr, "share", "glib-2.0", "schemas");
+        }
+
+        if (FileUtils.test (INSTALLED_SCHEMAS_DIR, FileTest.IS_DIR)) {
+            return INSTALLED_SCHEMAS_DIR;
+        }
+
+        return DEV_SCHEMAS_DIR;
     }
 }

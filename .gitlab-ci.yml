@@ -1,0 +1,35 @@
+stages:
+  - build
+  - test
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+build:
+  stage: build
+  image: archlinux:archlinux
+  before_script:
+    - pacman -Syu --noconfirm
+    - pacman -S --noconfirm meson ninja vala gcc gtk4 libadwaita git flex bison
+        libxml2 pangocairo appstream desktop-file-utils xvfb-run
+  script:
+    - make init-build
+    - meson setup build --prefix=/usr
+    - meson compile -C build
+  artifacts:
+    paths:
+      - build/
+
+test:
+  stage: test
+  image: archlinux:archlinux
+  needs: [build]
+  before_script:
+    - pacman -Syu --noconfirm
+    - pacman -S --noconfirm meson ninja vala gcc gtk4 libadwaita git flex bison
+        libxml2 pangocairo appstream desktop-file-utils xvfb-run
+  script:
+    - make init-build
+    - meson setup build --prefix=/usr
+    - meson compile -C build
+    - xvfb-run -a meson test -C build --print-errorlogs

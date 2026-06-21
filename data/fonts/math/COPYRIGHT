@@ -1,0 +1,14 @@
+Latin Modern fonts in this directory are from the GUST e-foundry project.
+See https://www.gust.org.pl/projects/e-foundry/latin-modern and
+https://www.gust.org.pl/projects/e-foundry/latin-modern-math
+
+Files:
+  lmroman10-*.otf       — Latin Modern Roman (GUST Font License)
+  latinmodern-math.otf  — Latin Modern Math (GUST Font License)
+
+Computer Modern TeX fonts (cm*.ttf) are bundled for Lasem math rendering.
+They use the legacy TeX font encodings required for stretchy delimiters
+(e.g. matrix brackets). Sourced from Matplotlib's font bundle (AMS/Bakoma).
+
+Files:
+  cmr10.ttf, cmmi10.ttf, cmsy10.ttf, cmex10.ttf

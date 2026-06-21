@@ -1,0 +1,6 @@
+option(
+  'viewer',
+  type: 'feature',
+  value: 'disabled',
+  description: 'Build the lasem demo viewer (passed through to the lasem subproject)',
+)

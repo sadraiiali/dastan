@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Dastan
+GenericName=Markdown Viewer
+Comment=Native GTK 4 Markdown viewer
+Exec=dastan %f
+Icon=io.github.markviewer
+Categories=Utility;Viewer;
+MimeType=text/markdown;text/x-markdown;
+StartupNotify=true
+Terminal=false
