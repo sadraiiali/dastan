@@ -24,6 +24,8 @@ LASEM_DIR := external/lasem
 
 init-build: ## Initialize the cmark-gfm and lasem submodules (required to compile)
 	git submodule update --init --recursive external/cmark-gfm external/lasem
+	@chmod +x external/lasem-meson/patch-lasem.sh
+	@./external/lasem-meson/patch-lasem.sh external/lasem
 	@test -f $(CMARK_GFM_DIR)/src/cmark.c || (echo "dastan: $(CMARK_GFM_DIR) submodule empty — use: git clone --recurse-submodules …" >&2; exit 1)
 	@test -f $(LASEM_DIR)/src/lsm.c || (echo "dastan: $(LASEM_DIR) submodule empty — use: git clone --recurse-submodules …" >&2; exit 1)
 	@ln -sfn ../lasem-meson/generated external/lasem/generated

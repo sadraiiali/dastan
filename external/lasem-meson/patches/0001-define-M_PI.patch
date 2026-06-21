@@ -1,0 +1,13 @@
+--- a/src/lsmtypes.h
++++ b/src/lsmtypes.h
+@@ -26,6 +26,10 @@
+ 
+ #include <glib-object.h>
+ 
++#ifndef M_PI
++#define M_PI G_PI
++#endif
++
+ G_BEGIN_DECLS
+ 
+ typedef struct _LsmExtents LsmExtents;
